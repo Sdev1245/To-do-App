@@ -1,0 +1,149 @@
+:root {
+  --orange: #ff7f50;
+  --black: #171717;
+  --white: #fff;
+  --shadow-sm: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: var(--black);
+  color: var(--black);
+}
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading Section */
+.hero-heading {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  height: 10%;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  padding: 0 50px;
+}
+.hero-heading .task {
+  background-color: var(--orange);
+  text-align: center;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-weight: 900;
+  font-size: 50px;
+}
+.hero-heading .list {
+  font-weight: 100;
+  font-size: 50px;
+  color: var(--white);
+}
+
+/* Add Task Icon */
+.plus {
+  align-items: center;
+  display: flex;
+  padding: 0 20px 0 0;
+}
+.plus i:hover {
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  border-radius: 50%;
+}
+.fa-solid {
+  color: var(--orange);
+  font-size: 33px;
+  margin-right: 15px;
+}
+
+/* Card Section */
+
+.card-container {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  padding: 0 0px;
+}
+
+.card {
+  height: 45vh;
+  width: 100%;
+  max-width: 280px;
+  border: 2px solid var(--orange);
+  border-radius: 10px;
+}
+.card:hover,
+.card:focus-visible,
+.card:active,
+.card:focus-within {
+  box-shadow: var(--shadow-sm);
+}
+
+.card-head-wrapper {
+  width: 280px;
+  height: 75px;
+  margin-bottom: 25px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  float: right;
+  height: 75px;
+  text-align: left;
+  width: 85%;
+  border-bottom: 2px solid var(--orange);
+}
+
+.card-head span {
+  font-style: italic;
+  color: var(--orange);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Task Listing */
+.card-body .task {
+  font-style: italic;
+  padding: 10px;
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.task:hover {
+  cursor: pointer;
+}
+.card-body .task::before {
+  height: 100%;
+  font-style: normal;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  color: var(--orange);
+  content: "\f0c8";
+  margin: 0 5px;
+}
+.check-icon * {
+  font-size: 1rem;
+}
+
+/* Completed Task changes */
+.completed.task::before {
+  display: none;
+}
+.completed.task::after {
+  display: inline-block;
+  text-decoration: none;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: var(--orange);
+  content: "\f14a";
+  margin: 0 5px;
+}
+.completed {
+  text-align: right;
+  font-style: normal !important;
+  text-decoration: line-through;
+  font-weight: 500 !important;
+}
